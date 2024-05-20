@@ -1,15 +1,9 @@
 ```mermaid
 sequenceDiagram
-    actor Usuario
     participant UI 
     participant Servidor
 
-    Usuario->>UI: Escribe en el campo de texto
-    Usuario->>UI: Hace clic en el botón Save
-    UI->>Servidor: POST  https://studies.cs.helsinki.fi/exampleapp/new_note param:Note
-    Servidor-->>UI: La respuesta se ha creado correctamente
-
-    UI->>Servidor: GET https://studies.cs.helsinki.fi/exampleapp/notes
+ UI->>Servidor: GET https://studies.cs.helsinki.fi/exampleapp/notes
     activate Servidor
     Servidor-->>UI: HTML document
     deactivate Servidor
@@ -32,3 +26,4 @@ sequenceDiagram
     deactivate Servidor
 
     Note right of UI: The browser executes the callback function that renders the notes
+    
